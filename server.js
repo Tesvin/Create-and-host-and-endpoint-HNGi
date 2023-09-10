@@ -13,13 +13,12 @@ app.use(express.json());
 app.use(cors())
 
 
-    //get current day 
-    day = new Date().getUTCDay()
+    
+    //day = new Date().getUTCDay()
     //const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
     
     
-    const todays_day = new Date().toLocaleDateString('en-US', { weekday: 'long' });
-
+    
     // utc time
     //const now = new Date();
     // const offsetMinutes = 2;
@@ -27,6 +26,9 @@ app.use(cors())
     // Calculate the adjusted time by adding or subtracting minutes
     //now.setMinutes(now.getUTCMinutes());
     //now.getUTCMinutes();
+
+    //get current day 
+    const todays_day = new Date().toLocaleDateString('en-US', { weekday: 'long' });
 
     // Format the date in "yyyy-MM-ddTHH:mm:ssZ" format
     const todays_time = new Date().toISOString().replace(/\.\d+Z$/, 'Z');
