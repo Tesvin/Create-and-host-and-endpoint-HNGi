@@ -14,28 +14,17 @@ app.use(cors())
 
 
     
-    //day = new Date().getUTCDay()
-    //const daysOfWeek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
-    
-    
-    
-    // utc time
-    //const now = new Date();
-    // const offsetMinutes = 2;
-
-    // Calculate the adjusted time by adding or subtracting minutes
-    //now.setMinutes(now.getUTCMinutes());
-    //now.getUTCMinutes();
-
-    //get current day 
-    const todays_day = new Date().toLocaleDateString('en-US', { weekday: 'long' });
-
-    // Format the date in "yyyy-MM-ddTHH:mm:ssZ" format
-    const todays_time = new Date().toISOString().replace(/\.\d+Z$/, 'Z');
+     
 
 
 // Endpoint
 app.get('/api', (req, res) => {
+
+     //get current day 
+     const todays_day = new Date().toLocaleDateString('en-US', { weekday: 'long' });
+
+     // Format the date in "yyyy-MM-ddTHH:mm:ssZ" format
+     const todays_time = new Date().toISOString().replace(/\.\d+Z$/, 'Z');
 
     // get parameters
     const slack_name = req.query.slack_name;
