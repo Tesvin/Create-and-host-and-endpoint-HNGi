@@ -19,7 +19,7 @@ app.use(cors())
     const todays_day = daysOfWeek[day]
 
     // utc time
-    const now = new Date();
+    //const now = new Date();
     // const offsetMinutes = 2;
 
     // Calculate the adjusted time by adding or subtracting minutes
@@ -27,7 +27,7 @@ app.use(cors())
     //now.getUTCMinutes();
 
     // Format the date in "yyyy-MM-ddTHH:mm:ssZ" format
-    const todays_time = now.toISOString().slice(0, 19) + "Z";
+    const todays_time = new Date().toISOString().replace(/\.\d+Z$/, 'Z');
 
 
 
